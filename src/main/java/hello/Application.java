@@ -18,11 +18,12 @@ public class Application {
         // 初始化 spring 容器
         ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
         // 获取对象
-        MessageService service = context.getBean(MessageService.class);
-        MessagePrinter printer = context.getBean(MessagePrinter.class);
-        System.out.println(printer);
-        System.out.println(service);
-        printer.setMessageService(service);
+        // MessageService service = context.getBean(MessageService.class);
+         MessagePrinter printer = context.getBean(MessagePrinter.class);
+//        System.out.println(printer);
+//        System.out.println(service);
+        // 因为加了 @Autowired 注解，所以这个方法会自动调用
+//        printer.setMessageService(service);
         printer.printMessage();
     }
 }

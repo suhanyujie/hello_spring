@@ -1,5 +1,6 @@
 package hello;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,11 +16,12 @@ public class MessagePrinter {
         return messageService;
     }
 
+    @Autowired
     public void setMessageService(MessageService messageService) {
         this.messageService = messageService;
     }
 
-    public void printMessage(){
+    public void printMessage() {
         System.out.println(this.messageService.getMessage());
     }
 }
