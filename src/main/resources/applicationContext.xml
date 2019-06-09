@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        bean 元素：表示描述的元素需要被 spring 容器管理
+        id：bean 元素的标识
+        class:对应类的全名
+
+        property 对应的是类中的属性名
+    -->
+    <bean id="service" class="hello.MessageService"></bean>
+
+    <bean id="printer" class="hello.MessagePrinter">
+        <property name="messageService" ref="service"></property>
+    </bean>
+</beans>
